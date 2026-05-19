@@ -12,6 +12,6 @@ class ProviderResponse:
     tool_call_id: str | None = None
 
 
-class provider:
+class Provider:
     def complete(self, transcript:list[dict],tools:list[dict])->ProviderResponse:
         """given the transcript and available tools.    """
