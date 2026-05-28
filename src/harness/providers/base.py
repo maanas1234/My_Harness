@@ -10,6 +10,10 @@ class ProviderResponse:
     tool_name: str | None = None
     tool_args: dict | None = None
     tool_call_id: str | None = None
+    reasoning_text: str | None = None
+    input_tokens: int = 0
+    output_tokens: int = 0
+    reasoning_tokens: int = 0 
 
 
 class Provider:
