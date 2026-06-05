@@ -15,6 +15,15 @@ class ProviderResponse:
     output_tokens: int = 0
     reasoning_tokens: int = 0 
 
+    @property
+    def is_tool_call(self) -> bool:
+        return self.tool_name is not None
+    
+
+    @property
+    def is_final(self)->bool:
+        return self.text is not None and self.tool_name is None
+
 
 class Provider:
     def complete(self, transcript:list[dict],tools:list[dict])->ProviderResponse:
